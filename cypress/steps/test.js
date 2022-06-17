@@ -5,13 +5,14 @@ Given(`I am on Google search page`, () =>{
 });
 
 When('I type {string} in the search field', (searchField) =>{
-    //cy.findByRole('input', { title: 'Search'}).type(searchField)
-    cy.get('.gLFyf').type(searchField+'{enter}');
+    cy.findByRole('combobox', {class: '.gLFyf'})
+        .type(searchField + '{enter}')
+    
 });
 
 Then('it should be ok', () =>{
     cy.log("Then section");
-    cy.title().should("include", "Google");
+    cy.title().should("include", "Cypress");
 
 });
 
