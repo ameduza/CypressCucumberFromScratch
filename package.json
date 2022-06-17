@@ -1,0 +1,20 @@
+{
+  "name": "go-clean",
+  "version": "1.0.0",
+  "description": "test clean version",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "9.7.0",
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "stepDefinitions": "cypress/steps/",
+    "commonPath": "cypress/steps/"
+  }
+}
