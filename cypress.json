@@ -1,5 +1,5 @@
 {
     "testFiles": "**/*.{feature,features}",
-    "integrationFolder" : "cypress/features",
+    "integrationFolder" : "features",
     "baseUrl": "http://localhost:3000/"
 }
