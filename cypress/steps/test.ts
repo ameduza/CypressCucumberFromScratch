@@ -1,7 +1,7 @@
 import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
 
 Given(`I am on Google search page`, () =>{
-    cy.visit('https://google.com')
+    cy.visit('https://google.com');
 });
 
 When('I type {string} in the search field', (searchField) =>{
