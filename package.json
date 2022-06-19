@@ -12,12 +12,11 @@
     "@testing-library/cypress": "^8.0.3",
     "@types/cypress-cucumber-preprocessor": "^4.0.1",
     "cypress": "^9.7.0",
-    "cypress-cucumber-preprocessor": "^4.3.1",
+    "@badeball/cypress-cucumber-preprocessor": "^11.0.0",
     "typescript": "^4.7.3"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,
-    "stepDefinitions": "cypress/steps/",
-    "commonPath": "cypress/steps/"
+    "stepDefinitions": "cypress/steps/**/*.{js,ts}"
   }
 }

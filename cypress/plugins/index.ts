@@ -12,22 +12,24 @@
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 
-/**
- * @type {Cypress.PluginConfig}
- */
-// eslint-disable-next-line no-unused-vars
-module.exports = (on, config) => {
-  // `on` is used to hook into various events Cypress emits
-  // `config` is the resolved Cypress config
-}
-const browserify = require('@cypress/browserify-preprocessor');
-const resolve = require('resolve');
-const cucumber = require('cypress-cucumber-preprocessor').default
+import * as browserify from "@cypress/browserify-preprocessor";
+import { addCucumberPreprocessorPlugin } from "@badeball/cypress-cucumber-preprocessor";
+import { preprocessor } from "@badeball/cypress-cucumber-preprocessor/browserify";
 
-module.exports = (on, config) => {
-  const options = {
-    ...browserify.defaultOptions,
-    typescript: resolve.sync('typescript', { baseDir: config.projectRoot }),
-  };
-  on('file:preprocessor', cucumber(options))
-}
+export default async (
+  on: Cypress.PluginEvents,
+  config: Cypress.PluginConfigOptions
+): Promise<Cypress.PluginConfigOptions> => {
+  await addCucumberPreprocessorPlugin(on, config);
+
+  on(
+    "file:preprocessor",
+    preprocessor(config, {
+      ...browserify.defaultOptions,
+      typescript: require.resolve("typescript"),
+    })
+  );
+
+  // Make sure to return the config object as it might have been modified by the plugin.
+  return config;
+};

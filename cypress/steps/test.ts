@@ -1,4 +1,4 @@
-import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
+import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import { siteName } from "./helpers/siteEnum";
 
 let siteContext: string;
@@ -18,7 +18,7 @@ Given(`I am on {string} search page`, (pageName: string) => {
   }
 });
 
-When("I search {string} term", (searchField) => {
+When("I search {string} term", (searchField: string) => {
   searchTerm(searchField);
 });
 

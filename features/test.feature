@@ -5,6 +5,7 @@ Feature: test simple feature
         When I search 'Cypress' term
         Then title should contain 'Cypress'
 
+Rule: Rule name
     Scenario: Wikipedia search
         Given I am on 'Wikipedia' search page
         When I search 'Java' term
