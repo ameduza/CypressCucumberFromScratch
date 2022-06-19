@@ -1,0 +1,36 @@
+{
+    "cucumberautocomplete.steps": ["cypress/steps/**/*.ts"],
+    "cucumberautocomplete.syncfeatures": "**/*.feature",
+    "cucumberautocomplete.skipDocStringsFormat": true,
+    "cucumberautocomplete.gherkinDefinitionPart": "(Given|When|Then|And)\\(",
+    "cucumberautocomplete.strictGherkinCompletion": true,
+    "cucumberautocomplete.customParameters": [
+      {
+        "parameter": "{string}",
+        "value": "'[^']+'"
+      }
+    ],
+    "cucumberautocomplete.formatConfOverride": {
+        "Ability": 0,
+        "Business Need": 0,
+        "Feature:": 0,
+        "Rule:": 0,
+        "Scenario:": 1,
+        "Background:": 0,
+        "Scenario Outline:": 1,
+        "Examples:": 2,
+        "Given": 2,
+        "When": 2,
+        "Then": 2,
+        "And": 3,
+        "But": 3,
+        "\"\"\"": 3,
+        "#": "relative",
+        "@": "relative",
+    },
+    "editor.formatOnSave": true,
+    "typescript.preferences.quoteStyle": "single",
+    "javascript.preferences.quoteStyle": "single",
+    "typescript.tsdk": "node_modules\\typescript\\lib",
+  
+}
